@@ -6,3 +6,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
+@app.get("/button")
+async def return_button():
+    return {"message" : "I SAID DON'T CLICK IT!"}
