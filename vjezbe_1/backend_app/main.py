@@ -16,7 +16,6 @@ class Podaci(BaseModel):
     firstname : str
     lastname : str
 
-global counter
 counter = -1
 def choose_response():
     response = [
@@ -34,12 +33,13 @@ async def root():
 
 @app.get("/button")
 async def return_button():
-    if counter >= 5:
+    global counter
+    if counter >= 4:
         counter = 0
     else:
         counter += 1
 
-    return {"message" : choose_response}
+    return {"message" : choose_response()}
 
 @app.post("/addname")
 async def addname(user_input : Podaci):
