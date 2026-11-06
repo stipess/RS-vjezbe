@@ -16,6 +16,7 @@ class Podaci(BaseModel):
     firstname : str
     lastname : str
 
+global counter
 counter = -1
 def choose_response():
     response = [
