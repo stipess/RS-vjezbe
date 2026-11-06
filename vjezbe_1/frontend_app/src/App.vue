@@ -3,9 +3,9 @@
 
   var text_received_from_server = ref("Nothing")
   
-  async function ContactServer() {
+  async function ClickMeButton() {
     // Data
-    var response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    var response = await fetch("https://rs-vjezbe-vjezbe1-zadatak2.onrender.com/button")
     
     // Data to json
     var json_file = await response.json()
@@ -22,7 +22,7 @@
   <p>
     Siguran je za kliknuti... valjda.
   </p>
-  <button @click="ContactServer">
+  <button @click="ClickMeButton">
     CLICK ME!
   </button>
   <p>
