@@ -60,8 +60,8 @@
     <label>Prezime:</label><br>
     <input type="text" id="lastname" name="lastname" v-model="prezime"><br>
     <br>
-    <button @click="AddName">
-      Send
-    </button>
   </form>
+  <button @click="AddName">
+      Send
+  </button>
 </template>
