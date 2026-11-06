@@ -2,7 +2,9 @@
 	import { ref } from 'vue'
 
   var text_received_from_server = ref("Don't click the button!")
-  
+  var ime = ref("")
+  var prezime = ref("")
+
   async function ClickMeButton() {
     // Data
     console.log("Sending GET request...")
@@ -26,7 +28,10 @@
         headers : {
           "Content-Type" : "application/json"
         },
-        body : JSON.stringify
+        body : JSON.stringify({
+          firstname : ime.value,
+          lastname : prezime.value
+        })
       }
 
     
@@ -51,9 +56,9 @@
   </h2>
   <form>
     <label>Ime:</label><br>
-    <input type="text" id="firstname" name="firstname"><br>
+    <input type="text" id="firstname" name="firstname" v-model="ime"><br>
     <label>Prezime:</label><br>
-    <input type="text" id="lastname" name="lastname"><br>
+    <input type="text" id="lastname" name="lastname" v-model="prezime"><br>
     <br>
     <button @click="AddName">
       Send
